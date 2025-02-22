@@ -1,70 +1,134 @@
-# Getting Started with Create React App
+# MERN Quiz App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🚀 **Live Demo:** [MERN Quiz App](https://mern-quiz-app1.netlify.app/)
 
-## Available Scripts
+This is a **MERN-based Quiz App** that allows users to take quizzes, track their scores, and view their past attempts. The application consists of a **React frontend**, an **Express and MongoDB backend**, and is deployed on **Netlify** and backend server on **render**.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 📌 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+✅ Fetches quiz questions dynamically from the backend  
+✅ Multiple-choice and text-based answer support  
+✅ Timer functionality (30 seconds per question)  
+✅ Tracks previous attempts using **localStorage**  
+✅ Displays real-time score updates after quiz submission  
+✅ Backend with **Express.js** and **MongoDB** for quiz storage
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🛠 Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### **Frontend**
 
-### `npm run build`
+- **React.js** (v19.0.0)
+- **React Router** (for navigation)
+- **CSS** (for styling)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **Backend**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Node.js** (CommonJS modules)
+- **Express.js** (for API handling)
+- **MongoDB** (for data storage)
+- **Mongoose** (for MongoDB object modeling)
+- **Cors & dotenv** (for environment and cross-origin handling)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 📂 Project Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### **Frontend** (`frontend/`)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- `src/components/Quiz.js` → Main quiz component
+- `src/api/quizService.js` → Fetches quiz data from the backend
+- `public/` → Contains static assets
+- `src/index.js` → Entry point for React app
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### **Backend** (`backend/`)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- `server.js` → Main server file
+- `routes/quizRoutes.js` → Handles quiz-related API routes
+- `models/Quiz.js` → Mongoose schema for quiz data
+- `config/db.js` → MongoDB connection file
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🔧 Installation & Setup
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 1️⃣ Clone the Repository
 
-### Code Splitting
+```bash
+git clone https://github.com/your-repo/mern-quiz-app.git
+cd mern-quiz-app
+npm run dev
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 2️⃣ Setup the Backend
 
-### Analyzing the Bundle Size
+```bash
+cd backend
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Create a `.env` file in the **backend/** directory and add:
 
-### Making a Progressive Web App
+```env
+MONGO_URI=your_mongodb_connection_string
+PORT=5000
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Then, start the backend server:
 
-### Advanced Configuration
+```bash
+npm run dev
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 3️⃣ Setup the Frontend
 
-### Deployment
+```bash
+cd ../frontend
+npm install
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 📡 API Endpoints
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| Method | Endpoint       | Description               |
+| ------ | -------------- | ------------------------- |
+| GET    | `/api/quizzes` | Fetch all quizzes         |
+| POST   | `/api/quizzes` | Create a new quiz (Admin) |
+
+---
+
+## 🎮 How to Play
+
+1. Open the app and start the quiz.
+2. Answer each question before the **30-second timer** runs out.
+3. Click "Next" to move to the next question.
+4. Submit the quiz to see your **final score**.
+5. View previous attempts stored in **localStorage**.
+
+---
+
+## 🛠 Deployment
+
+### **Frontend Deployment (Netlify)**
+
+### **Backend Deployment (Render)**
+
+---
+
+## 💡 Future Improvements
+
+- ✅ **User Authentication** (Login & Signup)
+- ✅ **Leaderboard System**
+- ✅ **More Quiz Categories**
+
+---
+
+## 👨‍💻 Author
+
+Developed by **Roshan Nayak**  
+🚀 Feel free to contribute to this project!
